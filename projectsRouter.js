@@ -61,4 +61,15 @@ router.delete("/projects/:id", (req, res) => {
         })
 })
 
+//Return actions for a specific post
+router.get("/projects/:id/actions", (req, res) => {
+    //!! Check to make sure id exists?
+    projects.getProjectActions(req.params.id)
+        .then((actions) => {
+            res.status(200).json(actions);
+        })
+        .catch((error) => {
+            res.status(500).json({message: "Error retrieving actions"})
+        })
+});
 module.exports = router;
