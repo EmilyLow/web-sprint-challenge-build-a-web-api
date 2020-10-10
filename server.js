@@ -9,7 +9,7 @@ server.use(express.json());
 
 
 server.use(projectsRouter);
-// server.use(actionsRouter);
+server.use(actionsRouter);
 
 
 server.get("/", (req, res) => {
