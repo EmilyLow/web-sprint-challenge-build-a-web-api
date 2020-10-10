@@ -1,6 +1,5 @@
 const express = require("express");
-//Router1
-//Router2
+
 const projectsRouter = require("./projectsRouter");
 const actionsRouter = require("./actionsRouter");
 
@@ -10,7 +9,7 @@ server.use(express.json());
 
 
 server.use(projectsRouter);
-server.use(actionsRouter);
+// server.use(actionsRouter);
 
 
 server.get("/", (req, res) => {
