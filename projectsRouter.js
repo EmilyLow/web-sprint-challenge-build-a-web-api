@@ -17,7 +17,16 @@ router.get("/projects", (req, res) => {
 })
 
 //Project put request
-
+router.put("/projects/:id", (req, res) => {
+    projects.update(req.params.id, req.body)
+        .then((project) => {
+            res.status(200).json(project);
+        })
+        .catch((error) => {
+            console.log(error);
+            res.status(500).json("Error updating project");
+        })
+})
 
 
 
